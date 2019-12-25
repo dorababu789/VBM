@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>modal</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
+    </head>
+    <body>
+        <div class="container-fluid p-0">
+             <div class="head  bg-warning p-2  d-flex justify-content-between align-items-center  ">
+                  <img class="rounded " width="80px" height="40px " src="vbm.jpeg" alt="logo">
+                  <div class="first-head d-flex align-items-center">
+                   <input class=" form-control mr-5" type="search" name="" id="" placeholder="Searchbar...">
+                   <a class=" mr-5 btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                       VBM INFOTECH </a> 
+                   </div>
+              </div>
+              <div class="card mt-4">
+                   <div class="card-header bg-secondary text-center text-light"> 
+                        <h3 > Student information </h3>
+                   </div>
+                   <div class="card-body">
+                       <Table class="table table-striped">
+                            <thead>
+                                    <tr>
+                                        <th> S NO </th>
+                                        <th> S NAME </th>
+                                        <th> TOTAL </th>
+                                        <th> GRADE </th>
+                                        <th>  ACTION </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> 1</td>
+                                    <td> Dorababu</td>
+                                    <td> 900</td>
+                                    <td> 90%</td>
+                                    <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                         VIEW
+                                          </button>
+                                          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                     <div class="modal-header bg-light">
+                                                          <h5 class="modal-title  " id="exampleModalLabel">STUDENT INFORMATION</h5>
+                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                  <span aria-hidden="true">&times;</span>
+                                                          </button>                                                    
+                                                     </div>
+                                                    <div class="modal-body bg-light">
+                                                        <table class="table table-striped">
+                                                              <thead>
+                                                                    <tr >
+                                                                       <th> S NO </th>
+                                                                       <th> S NAME </th>
+                                                                       <th> TOTAL </th>
+                                                                       <th> GRADE </th>
+                                                                       <th>  ACTION </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr >
+                                                                       <td> 1</td>
+                                                                       <td> Dorababu</td>
+                                                                       <td> 900</td>
+                                                                       <td> 90%</td>
+                                                                       <td> EDIT</td>
+                                        
+                                                                    </tr>
+                                                                </tbody>                                                               
+                                                       </table>
+                                                       <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div> 
+                                                  </div> 
+                                             </div>
+                                          </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                    <tr>
+                                        <td> 2</td>
+                                        <td> jAI</td>
+                                        <td>920</td>
+                                        <td> 92%</td>
+                                        <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+                                             VIEW
+                                              </button>
+                                              <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                         <div class="modal-header bg-light">
+                                                              <h5 class="modal-title  " id="exampleModalLabel">STUDENT INFORMATION</h5>
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                      <span aria-hidden="true">&times;</span>
+                                                              </button>                                                    
+                                                         </div>
+                                                        <div class="modal-body bg-light">
+                                                            <table class="table table-striped">
+                                                                  <thead>
+                                                                        <tr >
+                                                                           <th> S NO </th>
+                                                                           <th> S NAME </th>
+                                                                           <th> TOTAL </th>
+                                                                           <th> GRADE </th>
+                                                                           <th>  ACTION </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr >
+                                                                           <td> 2</td>
+                                                                           <td> jAI</td>
+                                                                           <td> 920</td>
+                                                                           <td> 92%</td>
+                                                                           <td> EDIT</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                           </table>
+                                                           <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                      </div>
+                                                 </div>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                </tbody>  <tbody>
+                                        <tr>
+                                            <td> 3</td>
+                                            <td> Venky</td>
+                                            <td>90</td>
+                                            <td> 90%</td>
+                                            <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+                                                 VIEW
+                                                  </button>
+                                                  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                             <div class="modal-header bg-light">
+                                                                  <h5 class="modal-title  " id="exampleModalLabel">STUDENT INFORMATION</h5>
+                                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                          <span aria-hidden="true">&times;</span>
+                                                                  </button>                                                    
+                                                             </div>
+                                                            <div class="modal-body bg-light">
+                                                                <table class="table table-striped">
+                                                                      <thead>
+                                                                            <tr >
+                                                                               <th> S NO </th>
+                                                                               <th> S NAME </th>
+                                                                               <th> TOTAL </th>
+                                                                               <th> GRADE </th>
+                                                                               <th>  ACTION </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr >
+                                                                               <td> 3</td>
+                                                                               <td> Venky</td>
+                                                                               <td> 900</td>
+                                                                               <td> 90%</td>
+                                                                               <td> EDIT</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                               </table>
+                                                               <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                                </div>
+                                                          </div>
+                                                     </div>
+                                                  </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>  <tbody>
+                                            <tr>
+                                                <td> 4</td>
+                                                <td> Raju</td>
+                                                <td>920</td>
+                                                <td> 92%</td>
+                                                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+                                                     VIEW
+                                                      </button>
+                                                      <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                 <div class="modal-header bg-light">
+                                                                      <h5 class="modal-title  " id="exampleModalLabel">STUDENT INFORMATION</h5>
+                                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                              <span aria-hidden="true">&times;</span>
+                                                                      </button>                                                    
+                                                                 </div>
+                                                                <div class="modal-body bg-light">
+                                                                    <table class="table table-striped">
+                                                                          <thead>
+                                                                                <tr >
+                                                                                   <th> S NO </th>
+                                                                                   <th> S NAME </th>
+                                                                                   <th> TOTAL </th>
+                                                                                   <th> GRADE </th>
+                                                                                   <th>  ACTION </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr >
+                                                                                   <td> 4</td>
+                                                                                   <td> Raju</td>
+                                                                                   <td> 920</td>
+                                                                                   <td> 92%</td>
+                                                                                   <td> EDIT</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                   </table>
+                                                                   <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                                    </div>
+                                                              </div>
+                                                         </div>
+                                                      </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>  <tbody>
+                                                <tr>
+                                                    <td> 5</td>
+                                                    <td> Shiva</td>
+                                                    <td>890</td>
+                                                    <td> 89%</td>
+                                                    <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
+                                                         VIEW
+                                                          </button>
+                                                          <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                     <div class="modal-header bg-light">
+                                                                          <h5 class="modal-title  " id="exampleModalLabel">STUDENT INFORMATION</h5>
+                                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                  <span aria-hidden="true">&times;</span>
+                                                                          </button>                                                    
+                                                                     </div>
+                                                                    <div class="modal-body bg-light">
+                                                                        <table class="table table-striped">
+                                                                              <thead>
+                                                                                    <tr >
+                                                                                       <th> S NO </th>
+                                                                                       <th> S NAME </th>
+                                                                                       <th> TOTAL </th>
+                                                                                       <th> GRADE </th>
+                                                                                       <th>  ACTION </th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr >
+                                                                                       <td> 5</td>
+                                                                                       <td> Shiva</td>
+                                                                                       <td> 890</td>
+                                                                                       <td> 89%</td>
+                                                                                       <td> EDIT</td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                       </table>
+                                                                       <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                                        </div>
+                                                                  </div>
+                                                             </div>
+                                                          </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody> 
+                                             <tbody>
+                                                 <tr>
+                                                     <td> 6</td>
+                                                     <td> Phani</td>
+                                                     <td>880</td>
+                                                     <td> 88%</td>
+                                                     <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal5">
+                                                          VIEW
+                                                           </button>
+                                                           <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                 <div class="modal-dialog" role="document">
+                                                                      <div class="modal-header bg-light">
+                                                                           <h5 class="modal-title  " id="exampleModalLabel">STUDENT INFORMATION</h5>
+                                                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                   <span aria-hidden="true">&times;</span>
+                                                                           </button>                                                    
+                                                                      </div>
+                                                                     <div class="modal-body bg-light">
+                                                                         <table class="table table-striped">
+                                                                               <thead>
+                                                                                     <tr >
+                                                                                        <th> S NO </th>
+                                                                                        <th> S NAME </th>
+                                                                                        <th> TOTAL </th>
+                                                                                        <th> GRADE </th>
+                                                                                        <th>  ACTION </th>
+                                                                                     </tr>
+                                                                                 </thead>
+                                                                                 <tbody>
+                                                                                     <tr >
+                                                                                        <td> 6</td>
+                                                                                        <td> Phani</td>
+                                                                                        <td> 880</td>
+                                                                                        <td> 88%</td>
+                                                                                        <td> EDIT</td>
+                                                                                     </tr>
+                                                                                 </tbody>
+                                                                        </table>
+                                                                        <div class="modal-footer">
+                                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                             <button type="button" class="btn btn-primary">Save changes</button>
+                                                                         </div>
+                                                                   </div>
+                                                              </div>
+                                                        </div>
+                                                    </td>
+                                               </tr>
+                                       </tbody>
+                       </Table>
+                   </div>
+              </div>
+        </div>
+    </body>
+</html>

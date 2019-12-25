@@ -1,0 +1,33 @@
+.img{
+    width: 80px;
+    height: 40px;
+}
+.first-head{
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0px;
+}
+.input{
+    padding-bottom: 6PX;
+    margin-right: 20px;
+}
+.card{
+    position: fixed;right: 15px;top: 55px;
+    width: 170px;
+    padding: 0px;
+    margin-right: 40px;
+}
+.card-body{
+    padding: 0px;
+    
+}
+.list-item {
+    padding: 0px;
+    width:170px;
+    
+}
