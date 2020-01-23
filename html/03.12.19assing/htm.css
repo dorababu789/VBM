@@ -1,0 +1,41 @@
+.head{
+    height: 80px;
+}
+.radio{
+    font-size: 80px;
+    margin-left: 100px;
+    margin-top:-45px;
+    color: blue;
+}
+.but{
+    margin-left: 174px;
+    margin-top: 20px;
+}
+.img{
+    width: 543px;
+    height: 300px;
+    margin-top: 18px;
+    
+}
+.st{
+    margin-top: 20px;
+    text-align: center;
+    color:black;
+}
+.full{
+ position: absolute;
+ left: 33px;
+ top: -18px;
+}
+.over:hover{
+    background:linear-gradient(45deg, rgb(170, 138, 138),orange)! important;
+    
+}
+a{
+    text-decoration: none !important;
+}
+.dan{
+    max-width: 24%;
+    margin-right: 11px;
+ 
+}

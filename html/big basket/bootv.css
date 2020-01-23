@@ -1,0 +1,100 @@
+
+
+.first-header{
+    background-color:slategrey;
+    height: 120px;
+    color: white;
+}
+
+.second-header{
+    height: 120px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.img-1,.img-2{
+    height: 80px;
+    width: 100px;
+    margin: 10px;
+     border-radius: 80px;
+}
+
+  .head-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+
+}
+.head-container-1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;   
+}
+.row-1,.row-2,.row-3,.row-4,.row-5{
+    color:black;
+    font-size: 30px;
+}
+.row-1{
+        border-bottom:2px solid blue;
+    }
+    .input-1{
+        width: 135px;
+        height: 50px;
+        margin-left: 142px;
+        margin-top: 30px;
+    }
+    .headcontainer-3{
+        border: yellow 2px solid;
+        padding: 20px;
+        margin: 40px;
+        border-radius: 24px;
+        background: white;
+    
+    }
+    .letter{
+        margin-left: 20px;
+        width: 300px;
+        height: 350px;
+        margin-top: 30px;
+    }
+    .img-3{
+        margin-left: 50px;
+    }
+    .select-1{
+        width: 266px;
+        height: 40px;
+    }
+    .cart,.cart-3,.headcart{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(77, 73, 73);
+        margin-left: 150px;
+        margin-right: 100px;
+        align-items: center;
+        margin-bottom: 20px;
+        
+    }
+    
+    .shop{
+       color: green;
+       border: 1px solid green;
+       margin-right: 10px;
+       margin-bottom: 20px;
+       
+
+    }
+    .pro{
+        background-color: green;
+        color: white;
+    }
+    .cart-4{
+        text-align: end;
+        margin-right: 100px;
+        margin-left: 150px;
+        border-bottom: 1px solid rgb(77, 75, 75);
+        margin-bottom: 20px;
+    }
+
+
+
