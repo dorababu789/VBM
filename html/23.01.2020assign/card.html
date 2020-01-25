@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> card deck</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        .card-header{
+            background:linear-gradient(45deg, #ffa500,rgb(33, 212, 33));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container w-50 ">
+        <div class="card">
+            <h5 onclick="card('card1')" class="card-header text-center">CARD 1</h5>
+            <div class="card-body bg-dark  text-white d-none" id="card1">
+                <h5 class="card-title">VBMINFOTECH</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+        <div class="card">
+
+            <h5 onclick="card('card2')" class="card-header text-center">CARD 2</h5>
+            <div class="card-body d-none bg-info text-white" id="card2">
+                <h5 class="card-title">VBMINFOTECH</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+        <div class="card">
+
+            <h5 onclick="card('card3')" class="card-header text-center">CARD 3</h5>
+            <div class="card-body d-none bg-primary text-white" id="card3">
+                <h5 class="card-title">VBMINFOTECH</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       function card (hide){
+         var x= document.getElementById(hide).classList
+        x.forEach(function(val,ind){
+             if(val=="d-none"){
+                 x.remove("d-none")
+             }
+             else{
+                x.add("d-none")
+
+             }
+         }
+         )
+                }
+    // function card(hide){
+    // var x=document.getElementById(hide).classList
+    //     for(var i = 0; i <= x.length; i++){
+    //         if(x[i] == 'd-none'){
+    //             x.remove('d-none');
+    //         }
+    //         else {
+    //             x.add('d-none')
+    //             console.log(x)
+    //             break;
+    //         }
+            
+    //     }
+        
+    // }
+
+    </script>
+</body>
+
+</html>
