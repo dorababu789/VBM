@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>table hide</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container  rounded mt-5" style=" background:linear-gradient(45deg,rgb(57, 145, 7),rgb(6, 80, 45),rgb(211, 164, 9));">
+        <div class="button mb-3" style="float: right;">
+            <button class="  btn btn-success  mt-3 " onclick="show()"> SHOW</button>
+            <button class="  btn btn-danger  mt-3" onclick="hide()"> HIDE</button>
+        </div>
+        <table class=" table table-striped  text-warning mt-3" id="tab">
+            <thead>
+                <tr>
+                    <th>S NO</th>
+                    <th>S NAME</th>
+                    <th>M1</th>
+                    <th>M2</th>
+                    <th>M3</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>Dora</td>
+                    <td> 80</td>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>250</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Raju</td>
+                    <td> 90</td>
+                    <td>90</td>
+                    <td>85</td>
+                    <td>265</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>Shiva</td>
+                    <td> 85</td>
+                    <td>90</td>
+                    <td>85</td>
+                    <td>260</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function hide() {
+            var contenthide = document.getElementById("tab")
+            contenthide.classList.add("d-none")
+        }
+        function show() {
+            var contenthide = document.getElementById("tab")
+            contenthide.classList.remove("d-none")
+            console.log(contenthide.classList)
+        }
+    </script>
+</body>
+
+</html>

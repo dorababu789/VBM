@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>login popup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        .xx {
+            top: 25px;
+            right: 480px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container w-50">
+        <!-- <div id="show" onclick="alert()"
+            class=" container bg-danger text-center text-white d-none alert  alert-dismissible fade show" role="alert">
+            <h3> A valid username and password</h3>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div> -->
+        <div id="show" class="bg-danger  rounded text-center text-white my-5 d-none ">
+            <h2 class="position-relative "> A valid username and Password</h2>
+            <a href=""> <span class="position-absolute xx text-white " onclick="alert()"> X </span></a>
+        </div>
+
+        <div class="container bg-warning rounded pb-5">
+            <h2 class="py-2 text-center text-white">Login form</h2>
+            <div class="form-group">
+                <label for=""> Username</label>
+                <input id="username" class="form-control" type="text" placeholder="Enter usrename">
+            </div>
+            <div class="form-group">
+                <label for=""> password</label>
+                <input id="password" class="form-control" type="text" placeholder="Enter Password">
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success" onclick="sub()"> submit</button>
+                <button class="btn btn-danger" onclick="reset()"> reset</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function sub() {
+            var abc = document.getElementById("username").value
+            var xyz = document.getElementById("password").value
+            if (abc == "" || xyz == "") {
+                document.getElementById("show").classList.remove("d-none")
+            }
+        }
+        function alert() {
+            document.getElementById("show").classList.add("d-none")
+        }
+        function reset() {
+            document.getElementById("username").value = ""
+            document.getElementById("password").value = ""
+        }
+    </script>
+</body>
+
+</html>
