@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>login form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container bg-dark w-25 my-5   " style="border-radius: 40px;padding: 60px; padding-bottom: 160px;">
+        <form action="">
+            <h2 class="text-white text-center mt-2 mb-5">LOGIN FORM</h2>
+            <div class="form-group">
+                <span id="username" class="text-white" > USERNAME</span>
+                <input class="form-control" id="display" type="text" onkeypress="user()"placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <span id="password" class="text-white"> PASSWORD</span>
+                <input id="displaypass"onkeypress="pass()" class="form-control" type="text" placeholder="Enter your password">
+            </div>
+            <button class="  btn btn-success  mt-3" onclick="username()"style="margin-left: 2pxpx;" > SUBMIT</button>
+            <button class="btn btn-danger  mt-3 ml-4" > .RESET</button>
+        </form>
+    </div>
+    <script>
+         function username(){
+             console.log('hi how are you')        
+         document.getElementById("username").value
+         }
+        function user() {
+            var name=document.getElementById("display").value 
+            if(isNaN(name)){
+            console.log("Enter a valid number")
+            }
+        }
+        function pass(){
+            var pass=document.getElementById("displaypass").value
+            if(!(isNaN(pass))){
+                console.log("enter a alphabatic")
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
