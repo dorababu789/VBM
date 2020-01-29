@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>showtable</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn btn-primary float-right mb-3 mt-2" onclick="tab()"> Genarate</button>
+    </div>
+    <div class="container">
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th> Country</th>
+                    <th>Phone number</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="table1">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var table = [];
+    var Person = function (firstname, lastname, age, address, city, state, country, phonenumber, email) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.phonenumber = phonenumber;
+        this.email = email;
+    }
+
+    var per = new Person("Dora",    "babu",    25, "1-128", "Kakinada", "Ap","IND", 9177614257,  "dorababu.@gmail.com")
+    var per1 = new Person("Siva",   "kumar",   24, "1-128", "Kakinada", "Ap","IND", 9177614256,  "dorababu.@gmail.com")
+    var per2 = new Person("Phani",   "vbm",    28, "1-128", "Kakinada", "Ap","IND", 9177614255,  "dorababu.@gmail.com")
+    var per3 = new Person("Raju",    "venkat", 27, "1-128", "Kakinada", "Ap","IND", 9177614254,  "dorababu.@gmail.com")
+    var per4 = new Person("Jai",     "sai",    23, "1-128", "Kakinada", "Ap","IND", 9177614253,  "dorababu.@gmail.com")
+    var per5 = new Person("Venky",   "kol",    30, "1-128", "Kakinada", "Ap","IND", 9177614252,  "dorababu.@gmail.com")
+    var per6 = new Person("Sanju",   "vbm",    25, "1-128", "Kakinada", "Ap","IND", 9177614251,  "dorababu.@gmail.com")
+    var per7 = new Person("Karthik", "vbm",    25, "1-128", "Kakinada", "Ap","IND", 9177614250,  "dorababu.@gmail.com")
+    var per8 = new Person("Anr",     "vbm",    25, "1-128", "Kakinada", "Ap","IND", 9177614259,  "dorababu.@gmail.com")
+    var per9 = new Person("Vamsi",   "vbm",    25, "1-128", "Kakinada", "Ap","IND", 9177614258,  "dorababu.@gmail.com")
+    table.push(per)
+    table.push(per1)
+    table.push(per2)
+    table.push(per3)
+    table.push(per4)
+    table.push(per5)
+    table.push(per6)
+    table.push(per7)
+    table.push(per8)
+    table.push(per9)
+
+    var some = "";
+    table.forEach(function (val, ind) {
+        some = some + "<tr><td>" + val.firstname + "</td><td>" + val.lastname + "</td><td>" + val.age + "</td><td>" + val.address + "</td><td>" + val.city + "</td><td>" + val.state + "</td><td>" + val.country + "</td><td>" + val.phonenumber + "</td><td>" + val.email + "</td></tr>"
+    });
+    function tab() {
+        document.getElementById("table1").innerHTML = some
+        var xyz = document.getElementById("table1").className
+
+        if (xyz.lastIndexOf("d-none") == -1) {
+            document.getElementById("table1").classList.add("d-none")
+        } else {
+            document.getElementById("table1").classList.remove("d-none")
+
+        }
+
+    }
+</script>
+
+</html>
