@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>api call</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="button">
+            <button class="btn btn-primary float-right my-3" onclick="tablegen()"> Genarate Table</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> id</th>
+                    <th>name</th>
+                    <th>User name</th>
+                    <th>Email</th>
+                    <th>city</th>
+                </tr>
+            </thead>
+            <tbody id="table1">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function tablegen() {
+            var abc = document.getElementById("table1");
+
+            var http = new XMLHttpRequest();
+            var xyz = http.open("GET", "http://jsonplaceholder.typicode.com/users");
+            http.send(xyz);
+            http.responseType = "json"
+            http.onload = function () {
+                var dd = http.response;
+                var tab = "";
+                dd.forEach(function (val, ind) {
+
+                    tab = tab + "<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.username + "</td><td>" + val.email + "</td></tr>"
+
+                })
+                abc.innerHTML = tab;
+            }
+            var xyz = document.getElementById("table1").className
+
+            if (xyz.lastIndexOf("d-none") == -1) {
+                document.getElementById("table1").classList.add("d-none")
+            } else {
+                document.getElementById("table1").classList.remove("d-none")
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Genarate card</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-right">
+            <button class="btn btn-primary    my-3" onclick="card()"> Genarate Card</button>
+
+        </div>
+        <div class=" text-center " id="card1">
+
+        </div>
+    </div>
+</body>
+<script>
+    function card() {
+        var card2 = new XMLHttpRequest();
+        var card3 = card2.open("GET", "http://jsonplaceholder.typicode.com/users")
+        card2.send(card3);
+        card2.responseType = "json";
+        card2.onload = function () {
+            xyz = card2.response;
+            var card4 = "";
+            xyz.forEach(function (val, ind) {
+                card4 = card4 + "<div class='card-header border border-warning '>" + val.name + "</div><div class='card-body border border-dark'>" + val.address.city+ " <br>"+val.address.zipcode+ "</div><div class='card-footer border border-danger mb-5'>" + val.email + "</div>"
+
+            })
+          //document.getElementById("card1").innerHTML ="";
+          document.getElementById("card1").innerHTML = card4;
+          document.getElementById("card1").classList.toggle("d-none");
+        }
+    }
+
+</script>
+
+</html>
