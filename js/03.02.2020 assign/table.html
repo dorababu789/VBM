@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>table 03.02</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">     
+        <link rel="stylesheet" href="tab.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-between bg-warning header">
+                <img class="img" src="vbm.jpeg" alt="image" >
+                <a class="anchor" href="#"> Logout</a>
+            </div>
+            <div class="row bg-info d-flex justify-content-around text-center my-2 text-danger second-header">
+                <a class="color text-center" href="#">Home</a>
+                <a class="color text-center" href="#">Services</a>
+                <a class="color text-center" href="#">Home</a>
+            </div>
+            <div class="row d-flex justify-content-end my-2">
+                <button class="btn btn-success " onclick="genaratetab()"> Genarate Table</button>
+            </div>
+            <div class="row">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id=table1> </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script>
+    function genaratetab(){
+        var table= new XMLHttpRequest();
+        table.open("GET","https://jsonplaceholder.typicode.com/users");
+        table.responseType="json";
+        table.send();
+         table.onload=function(){
+             var xyz=table.response;
+             var tab="";
+             xyz.forEach(function(val,ind){
+                 tab=tab+"<tr><td><a href=card.html>"+val.id+"</a></td><td>"+val.name+"</td><td>"+val.username+"</td><td>"+val.email+"</td></tr>"
+             });
+             document.getElementById("table1").innerHTML=tab
+         }
+    }
+    </script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<title>card</title>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="table.css">
+    <script src="https://kit.fontawesome.com/dd0b9f2816.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row  d-flex justify-content-between" style="background: linear-gradient(45deg,green,orange);">
+            <img class="img p-3" src="vbm.jpeg" alt="logo" width="100px" height="100px ">
+            <a class=" anchor px-4" href="#">Logout</a>
+        </div>
+        <div class="container-fluid mt-3 px-0">
+            <div class="row">
+                <ul class="list-group w-25 bg-dark ">
+                    <li class="list-group-item bg-dark"><a class="list" href="#"> Home</a> </li>
+                    <li class="list-group-item bg-dark"><a class="list" href="#"> Service</a></li>
+                    <li class="list-group-item bg-dark"><a class="list" href="#"> About</a></li>
+                </ul>
+                <div class="container" id="card">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var loc = location.search;
+    var spl = loc.split("=");
+    var mer = spl[spl.length - 1];
+
+    var http = new XMLHttpRequest();
+    http.open("GET", "https://jsonplaceholder.typicode.com/users/" + mer);
+    http.responseType = "json";
+    http.send();
+    http.onload = function () {
+        var xyz = http.response;
+        console.log(xyz)
+        var card1 = "";
+        card1 = card1 + "<div class='card text-center'><div class='card-header'>" + xyz.id + "</div><div class='card-body'>" + xyz.name + "</div><div class='card-footer'>" + xyz.email + "</div></div>"
+        document.getElementById("card").innerHTML = card1;
+    }
+</script>
+
+</html>

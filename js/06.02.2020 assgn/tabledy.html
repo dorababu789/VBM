@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>table 06.02 </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="table.css">
+    <script src="https://kit.fontawesome.com/dd0b9f2816.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row  d-flex justify-content-between" style="background: linear-gradient(45deg,green,orange);">
+            <img class="img p-3" src="vbm.jpeg" alt="logo" width="100px" height="100px ">
+            <a class=" anchor px-4" href="#">Logout</a>
+        </div>
+        <div class="container-fluid mt-3 px-0">
+            <div class="row">
+                <ul class="list-group w-25 bg-dark">
+                    <li class="list-group-item bg-dark"><a class="list" href="#"> Home</a></li>
+                    <li class="list-group-item bg-dark"><a class="list" href="#"> Services</a></li>
+                    <li class="list-group-item bg-dark"><a class="list" href="#"> About</a> </li>
+                </ul>
+                <div class="container h-100">
+                    <table class="table table-striped px-5">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>City</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var http = new XMLHttpRequest();
+    http.open("GET", "https://jsonplaceholder.typicode.com/users");
+    http.responseType = "json";
+    http.send();
+    http.onload = function () {
+        var xyz = http.response;
+        var tab = "";
+        xyz.forEach(function (val, ind) {
+            tab = tab + "<tr><td>" + val.id + "</td><td>" + val.username + "</td><td>" + val.name + "</td><td>" + val.phone +
+                "</td><td>" + val.email + "</td><td>" + val.address.city + "</td><td><a href='edit.html?id=" + val.id + "'>" + 
+                "<i class=' text-danger fas fa-pencil-alt'></i></a><a href='view.html?id=" + val.id + 
+                "'><i class=' ml-2 text-danger fas fa-eye'></i></a> <a href='#'><i class=' ml-2 text-danger  fas fa-trash' onclick=delete1()></i></a>" + "</td></tr>"
+        });
+
+        document.getElementById("table").innerHTML = tab;
+    }
+    function delete1() {
+        http = new XMLHttpRequest();
+        http.open("DELETE", "https://jsonplaceholder.typicode.com/users");
+        http.responseType = "json";
+        http.send();
+        http.onload = function () {
+            var xyz = http.response;
+
+        }
+    }
+</script>
+
+
+</html>

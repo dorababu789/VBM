@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>card</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="tal.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between bg-warning header">
+            <img class="img" src="vbm.jpeg" alt="image">
+            <a class="anchor" href="#"> Logout</a>
+        </div>
+        <div class="row bg-info d-flex justify-content-around text-center my-2 text-danger second-header">
+            <a class="color text-center" href="#">Home</a>
+            <a class="color text-center" href="#">Services</a>
+            <a class="color text-center" href="#">Home</a>
+        </div>
+    </div>
+    <div id="card1">
+
+    </div>
+</body>
+<script>
+    var loc=location.search;
+    var spl=loc.split("=");
+    var mer=spl[spl.length-1]
+    var xyz = new XMLHttpRequest();
+    xyz.open("GET", "https://jsonplaceholder.typicode.com/users/"+mer);
+    xyz.responseType = "json";
+    xyz.send();
+    xyz.onload = function () {
+        var abc = xyz.response;
+        var cad = "";
+        cad = cad + "<div class='card'>,<div class='card-header text-center'>" + abc.id + "</div><div class='card-body text-center'>" + abc.name + "</div><div class='card-footer text-center'>" + abc.email + "</div></div>"
+        document.getElementById("card1").innerHTML=cad;
+    }
+
+</script>
+
+</html>

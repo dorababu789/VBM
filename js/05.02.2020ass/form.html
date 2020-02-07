@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form 05.02</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="form1.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between bg-warning header">
+            <img class="img" src="vbm.jpeg" alt="image">
+            <a class="anchor" href="#"> Logout</a>
+        </div>
+        <div class="row bg-info d-flex justify-content-around text-center my-2 text-danger second-header">
+            <a class="color text-center" href="#">Home</a>
+            <a class="color text-center" href="#">Services</a>
+            <a class="color text-center" href="#">Home</a>
+        </div>
+        <div class="container  bg-warning py-3 rounded">
+            <div>
+                <h2 class="text-center">REGISTRATION FORM</h2>
+            </div>
+            <div class="row form-group px-4">
+                <div class="col-md-6 ">
+                    <span>Userid</span>
+                    <input class="form-control" id="userid" type="text" placeholder=" Enter Your Userid">
+                </div>
+                <div class="col-md-6">
+                    <span>UserName</span>
+                    <input id="username" class="form-control" type="text" placeholder=" Enter Your Uesrname">
+                </div>
+            </div>
+            <div class="row form-group px-4">
+                <div class="col-md-6 ">
+                    <span>Password</span>
+                    <input class="form-control" id="password" type="password" placeholder=" Enter Your Password">
+                </div>
+                <div class="col-md-6 ">
+                    <span>Email id</span>
+                    <input id="email" class="form-control" type="email" placeholder=" Enter Your Email id">
+                </div>
+            </div>
+            <div class="row form-group px-4">
+                <div class="col-md-6 ">
+                    <span>Mobile number</span>
+                    <input class="form-control" id="mobile" type="number" placeholder=" Enter Your Mobilenumber">
+                </div>
+                <div class="col-md-6 ">
+                    <span>Website</span>
+                    <input id="website" class="form-control" type="number" placeholder="Enter Your Website">
+                </div>
+            </div>
+            <h2 class="text-center">Address</h2>
+            <div class="row form-group px-4">
+                <div class="col-md-6 ">
+                    <span>House number</span>
+                    <input class="form-control" id="house" type="text" placeholder=" Enter Your Housenumber">
+                </div>
+                <div class="col-md-6 ">
+                    <span>Street</span>
+                    <input id="street" class="form-control" type="text" placeholder=" Enter Your Street">
+                </div>
+            </div>
+            <div class="row form-group px-4">
+                <div class="col-md-6 ">
+                    <span>Village</span>
+                    <input class="form-control" id="Village" type="text" placeholder="Enter Your VillageName">
+                </div>
+                <div class="col-md-6 ">
+                    <span>Mandal</span>
+                    <input id="Mandal" class="form-control" type="text" placeholder="Enter Your MandalName">
+                </div>
+            </div>
+            <div class="row form-group px-4">
+                <div class="col-md-6 ">
+                    <span>District</span>
+                    <input class="form-control" id="District" type="text" placeholder="Enter Your DistrictName">
+                </div>
+                <div class="col-md-6 ">
+                    <span>Pincode</span>
+                    <input id="Pincode" class="form-control" type="text" placeholder="Enter Your Pincode">
+                </div>
+            </div>
+            <div class="row form-group px-4">
+                <div class="col-md-6">
+                    <label for="State">State</label>
+                    <select name="State" class="form-control" id="state">
+                        <option value="AP">AP </option>
+                        <option value="TS">TS </option>
+                        <option value="TM">TM </option>
+                        <option value="HM">MH </option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="Country">Country</label>
+                    <select name="Country" class="form-control" id="Country">
+                        <option value="IND">IND </option>
+                        <option value="PAK">PAK </option>
+                        <option value="AUS">AUS </option>
+                        <option value="NZ">NZ </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row  d-flex justify-content-around py-4">
+                <button class="btn btn-success text-center " onclick="submit()"> Submit</button>
+                <button class="btn btn-danger text-center " onclick="reset()"> Reset</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function submit(){
+        var userid = document.getElementById("userid").value
+        var username = document.getElementById("username").value
+        var password = document.getElementById("password").value
+        var email = document.getElementById("email").value
+        var mobile = document.getElementById("mobile").value
+        var website = document.getElementById("website").value
+        var house = document.getElementById("house").value
+        var street = document.getElementById("street").value
+        var mandal = document.getElementById("Mandal").value
+        var district = document.getElementById("District").value
+        var pincode = document.getElementById("Pincode").value
+        var state = document.getElementById("state").value
+        var country = document.getElementById("Country").value
+        var object={
+            id:userid,
+            username:username,
+            password:password,
+            email:email,
+            mobile:mobile,
+            website:website,
+            house:house,
+            street:street,
+            mandal:mandal,
+            district:district,
+            pincode:pincode,
+            state:state,
+            country:country,           
+        };
+         console.log(object)
+         var http=new XMLHttpRequest();
+         http.open("POST","https://reqres.in/api/users");
+         http.responseType="json";
+         http.send(object);
+         http.onload=function(){
+             xyz=http.response;
+             console.log(xyz)
+         }
+    }
+</script>
+
+</html>
