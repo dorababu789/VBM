@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>users 11.02</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ajax.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between bg-warning header" style="background: linear-gradient(45deg,orange,green);">  
+               <img class="img" src="vbm.jpeg" alt="image">
+            <a class="anchor" href=""> Logout</a>
+        </div>
+        <div class="row bg-info d-flex justify-content-around text-center my-2 text-danger second-header">
+            <a class="color text-center" href="ajaxuser.html">Users</a>
+            <a class="color text-center" href="ajaxpost.html">Post</a>
+            <a class="color text-center" href="ajaxcomment.html">Comments</a>
+        </div>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="bg-primary">
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id=table1> </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    $.ajax({
+        // "method":"GET",
+        "url"   :"https://jsonplaceholder.typicode.com/users",
+        success:function(xyz){
+            var tab = "";
+          xyz.forEach(function (val, ind) {
+              tab = tab + "<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.username + "</td><td>" + val.email + "</td></tr>"
+          });
+          document.getElementById("table1").innerHTML = tab
+      }
+        
+    })
+
+</script>
+
+</html>

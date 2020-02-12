@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>post</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ajax.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between bg-warning header" style="background: linear-gradient(45deg,orange,green);">
+            <img class="img" src="vbm.jpeg" alt="image">
+            <a class="anchor" href="ajaxuser.html"> Logout</a>
+        </div>
+        <div class="row bg-info d-flex justify-content-around text-center my-2 text-danger second-header">
+            <a class="color text-center" href="ajaxuser.html">User</a>
+            <a class="color text-center" href="ajaxpost.html">Post</a>
+            <a class="color text-center" href="ajaxcomment.html">Comment</a>
+        </div>
+    </div>
+    <div id="card1">
+
+    </div>
+</body>
+<script>
+
+
+    $.ajax({
+        // "method": "GET",
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "success": function (response) {
+            var post = "";
+            response.forEach(function (val, ind) {
+                post = post + "<div class='card border-0 '><div class='card-header w-50 mx-auto  text-center  bg-primary'>" + val.id + "</div><div class='card-body w-50 mx-auto  text-center '>" + val.title + "</div><div class='card-footer mb-4 w-50 mx-auto  text-center '>" + val.body + "</div></div >"
+            })
+            document.getElementById("card1").innerHTML = post;
+        }
+
+    })
+</script>
+
+</html>

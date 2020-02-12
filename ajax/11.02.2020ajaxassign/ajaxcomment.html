@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>comments</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ajax.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between header" style="background: linear-gradient(45deg,orange,green);">
+            <img class="img" src="vbm.jpeg" alt="image">
+            <a class="anchor" href="ajaxuser.html"> Logout</a>
+        </div>
+        <div class="row bg-info d-flex justify-content-around text-center my-2 text-danger second-header">
+            <a class="color text-center" href="ajaxuser.html">User</a>
+            <a class="color text-center" href="ajaxpost.html">Post</a>
+            <a class="color text-center" href="ajaxcomment.html">Comment</a>
+        </div>
+    </div>
+    <div id="card1">
+
+    </div>
+</body>
+<script>
+    $.ajax({
+        "type": "GET",
+        "url": "https://jsonplaceholder.typicode.com/comments",
+        "dataFilter" : function(data,type){
+            console.log(data[0])
+           // console.log(type)
+        },
+        "success": function (abc) {
+            var comment = "";
+            abc.forEach(function (val, ind) {
+                comment = comment + "<div class='card border-0'><div class='card-header w-50 mx-auto  text-center  bg-primary'>" + val.id + "</div><div class='card-body w-50  mx-auto text-center'>" + val.name + "</div><div class='card-footer mb-4 w-50 mx-auto text-center'>" + val.email + "</div></div >"
+            });
+            $("#card1").html(comment);
+        }
+    })
+</script>
+
+</html>
