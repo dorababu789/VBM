@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>card</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="use.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between bg-warning header" style="background: linear-gradient(45deg,orange,green);">
+            <img class="img" src="vbm.jpeg" alt="image">
+            <a class="anchor" href="user.html"> Logout</a>
+        </div>
+        <div class="row bg-info d-flex justify-content-around text-center my-2 text-danger second-header">
+            <a class="color text-center" href="user.html">User</a>
+            <a class="color text-center" href="post.html">Post</a>
+            <a class="color text-center" href="comment.html">Comment</a>
+        </div>
+    </div>
+    <div id="card1">
+
+    </div>
+</body>
+<script>
+
+    var http = new XMLHttpRequest();
+    http.open("GET", "https://jsonplaceholder.typicode.com/posts");
+    http.responseType = "json";
+    http.send();
+    http.onload = function () {
+    abc = http.response;
+    var post = "";
+    abc.forEach(function(val,ind){
+        post=post + "<div class='card text-center '><div class='card-header bg-warning'>" + val.id + "</div><div class='card-body'>" + val.title + "</div><div class='card-footer mb-4'>" + val.body + "</div></div >"
+        
+    })
+    document.getElementById("card1").innerHTML = post;
+   
+    }
+</script>
+
+</html>

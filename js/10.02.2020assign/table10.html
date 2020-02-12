@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>table 10..02 </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="table.css">
+    <script src="https://kit.fontawesome.com/dd0b9f2816.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row  d-flex justify-content-between" style="background: linear-gradient(45deg,green,orange);">
+            <img class="img p-3" src="vbm.jpeg" alt="logo" width="100px" height="100px">
+            <a class=" anchor px-4" href="#">Logout</a>
+        </div>
+        <div class="container-fluid  px-0">
+
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>City</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+
+
+
+    var http = new XMLHttpRequest();
+    http.open("GET", "https://jsonplaceholder.typicode.com/users");
+    http.responseType = "json";
+    http.send();
+    http.onload = function () {
+        var xyz = http.response;
+        var tab = "";
+        xyz.forEach(function (val, ind) {
+            tab = tab + "<tr><td><input style='width:50px;' id='input" + val.id + "'" + "class='border-0' readonly disabled  type ='text' value=" + val.id + "></td><td><input style='width:100px;' id='input1" + val.id + "'" + " class='  border-0' readonly type='text' value=" + val.username +
+                "></td><td><input style='width:100px;' id='input2" + val.id + "'" + " class='  border-0' readonly type='text' value=" + val.name + "></td><td><input style='width:150px;' id='input3" + val.id + "'" + " class='  border-0' readonly type='text'value=" + val.phone +
+                "></td><td><input style='width:150px;' id='input4" + val.id + "'" + " class='  border-0 'readonly type='text'value=" + val.email + "></td><td><input style='width:150px;' id='input5" + val.id + "'" + " class='border-0' readonly type='text'value=" + val.address.city +
+                "></td><td> <button id='button" + val.id + "' class= 'd-none mr-2 btn btn-success' onclick='update(" + val.id + ")'> Update</button><button id='cancel" + val.id + "' class=' d-none btn btn-danger' onclick='cancel(" + val.id + ")'> Cancel</button><button id='edit" + val.id + "' class='btn btn-warning' onclick='edit(" + val.id + ")'> Edit</button></td></tr>"
+        });
+        document.getElementById("table").innerHTML = tab;
+    }
+    function edit(s) {
+        document.getElementById("edit" + s).classList.add("d-none");
+        document.getElementById("button" + s).classList.remove("d-none");
+        document.getElementById("cancel" + s).classList.remove("d-none");
+        document.getElementById("input" + s).classList.remove("border-0");
+        document.getElementById("input1" + s).classList.remove("border-0");
+        document.getElementById("input2" + s).classList.remove("border-0");
+        document.getElementById("input3" + s).classList.remove("border-0");
+        document.getElementById("input4" + s).classList.remove("border-0");
+        document.getElementById("input5" + s).classList.remove("border-0");
+        document.getElementById("input" + s).removeAttribute("readonly")
+        document.getElementById("input1" + s).removeAttribute("readonly")
+        document.getElementById("input2" + s).removeAttribute("readonly")
+        document.getElementById("input3" + s).removeAttribute("readonly")
+        document.getElementById("input4" + s).removeAttribute("readonly")
+        document.getElementById("input5" + s).removeAttribute("readonly")
+
+
+
+    }
+    function update(s) {
+        var id = document.getElementById("input" + s).value
+        var name = document.getElementById("input1" + s).value
+        var username = document.getElementById("input2" + s).value
+        var phone = document.getElementById("input3" + s).value
+        var email = document.getElementById("input4" + s).value
+        var city = document.getElementById("input5" + s).value
+        var object1 = {
+            id: id,
+            name: name,
+            username: username,
+            phone: phone,
+            email: email,
+            city: city,
+        };
+        var http = new XMLHttpRequest();
+        http.open("POST", "https://jsonplaceholder.typicode.com/users");
+        http.responseType = "json";
+        http.send(object1);
+        http.onload = function () {
+            var xyz = http.response;
+            console.log(xyz)
+        }
+    }
+
+    function cancel(s) {
+        var http = new XMLHttpRequest();
+        http.open("GET", "https://jsonplaceholder.typicode.com/users/" + s);
+        http.responseType = "json";
+        http.send();
+        http.onload = function () {
+            var xyz = http.response;
+            document.getElementById("input" + s).value = xyz.id;
+            document.getElementById("input1" + s).value = xyz.name;
+            document.getElementById("input2" + s).value = xyz.username;
+            document.getElementById("input3" + s).value = xyz.phone;
+            document.getElementById("input4" + s).value = xyz.email;
+            document.getElementById("input5" + s).value = xyz.address.city;
+
+            document.getElementById("edit" + s).classList.remove("d-none");
+            document.getElementById("button" + s).classList.add("d-none");
+            document.getElementById("cancel" + s).classList.add("d-none");
+            document.getElementById("input" + s).classList.add("border-0");
+            document.getElementById("input1" + s).classList.add("border-0");
+            document.getElementById("input2" + s).classList.add("border-0");
+            document.getElementById("input3" + s).classList.add("border-0");
+            document.getElementById("input4" + s).classList.add("border-0");
+            document.getElementById("input5" + s).classList.add("border-0");
+            document.getElementById("input" + s).addttribute("readonly")
+            document.getElementById("input1" + s).addAttribute("readonly")
+            document.getElementById("input2" + s).addAttribute("readonly")
+            document.getElementById("input3" + s).addAttribute("readonly")
+            document.getElementById("input4" + s).addAttribute("readonly")
+            document.getElementById("input5" + s).addAttribute("readonly")
+
+
+        }
+    }
+
+</script>
+
+
+</html>

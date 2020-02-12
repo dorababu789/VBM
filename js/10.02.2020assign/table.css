@@ -1,0 +1,21 @@
+.img{
+    border-radius: 50px;
+    }
+    .anchor{
+        margin-top: 35px;
+        color: black;
+        font-size: large;
+    
+    }
+    .side-header{
+        width: 25%;
+        background-color: slategray;
+    }
+    
+    a,a:hover{
+        color:white;
+        text-decoration: none;
+        
+    }
+    
+    

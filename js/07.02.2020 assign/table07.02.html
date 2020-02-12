@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>table 07.02 </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="pop.css">
+    <script src="https://kit.fontawesome.com/dd0b9f2816.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row  d-flex justify-content-between" style="background: linear-gradient(45deg,green,orange);">
+            <img class="img p-3" src="vbm.jpeg" alt="logo" width="100px" height="100px ">
+            <a class=" anchor px-4" href="#">Logout</a>
+        </div>
+        <div class="container-fluid mt-3 px-0">
+            <div class="row">
+                <ul class="list-group w-25 bg-dark">
+                    <li class="list-group-item bg-dark"><a class="list" href="#"> Home</a></li>
+                    <li class="list-group-item bg-dark"><a class="list" href="#"> Services</a></li>
+                    <li class="list-group-item bg-dark"><a class="list" href="#"> About</a> </li>
+                </ul>
+                <div class="container h-100">
+                    <table class="table table-striped px-5">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>City</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table">
+
+
+                        </tbody>
+                    </table>
+                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+                        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Form</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container  bg-warning py-3 rounded">
+                                        <div class="row form-group px-4">
+                                            <div class="col-md-6 ">
+                                                <span>Userid</span>
+                                                <input class="form-control" id="userid" type="text"
+                                                    placeholder=" Enter Your Userid" disabled>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <span>UserName</span>
+                                                <input id="username" class="form-control" type="text"
+                                                    placeholder=" Enter Your Uesrname">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group px-4">
+                                            <div class="col-md-6 ">
+                                                <span>Password</span>
+                                                <input class="form-control" id="password" type="text"
+                                                    placeholder=" Enter Your Password">
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <span>Email id</span>
+                                                <input id="email" class="form-control" type="email"
+                                                    placeholder=" Enter Your Email id">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group px-4">
+                                            <div class="col-md-6 ">
+                                                <span>Mobile number</span>
+                                                <input class="form-control" id="phone" type="text"
+                                                    placeholder=" Enter Your Mobilenumber">
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <span>City</span>
+                                                <input id="city" class="form-control" type="text"
+                                                    placeholder="Enter Your city">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="save()">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var http = new XMLHttpRequest();
+    http.open("GET", "https://jsonplaceholder.typicode.com/users");
+    http.responseType = "json";
+    http.send();
+    http.onload = function () {
+        var abc = http.response;
+        var tab = "";
+        abc.forEach(function (val, ind) {
+            var hi = val
+            tab = tab + "<tr><td>" + val.id + "</td><td>" + val.username + "</td><td>" + val.name + "</td><td>" + val.phone + "</td><td>" + val.email + "</td><td>" + val.address.city + "</td><td><button type='button'"+ "onclick='edit(" + hi + ")'" + "class='btn btn-primary' data-toggle='modal' data-target='#staticBackdrop'>" + 'Edit' + "</button></td></tr>"
+
+        });
+        document.getElementById("table").innerHTML = tab;
+    }
+
+
+    function edit(a) {
+        // var http = new XMLHttpRequest();
+        // http.open("GET", "https://jsonplaceholder.typicode.com/users/" + a);
+        // http.responseType = "json";
+        // http.send();
+        // http.onload = function () {
+            var xyz = a[0];
+            document.getElementById("userid").value = xyz.id;
+            document.getElementById("username").value = xyz.name;
+            document.getElementById("password").value = xyz.username;
+            document.getElementById("email").value = xyz.email;
+            document.getElementById("phone").value = xyz.phone;
+            document.getElementById("city").value = xyz.address.city;
+
+        //}
+    }
+    function save() {
+
+        var id = document.getElementById("userid").value
+        var username = document.getElementById("username").value
+        var password = document.getElementById("password").value
+        var email = document.getElementById("email").value
+        var phone = document.getElementById("phone").value
+        var city = document.getElementById("city").value
+        var obj = {
+            "id": id,
+            "username": username,
+            "password": password,
+            "email": email,
+            "phone": phone,
+            "address": {
+                "city": city,
+            }
+        };
+        var http = new XMLHttpRequest();
+        http.open("POST", "https://reqres.in/api/users");
+        http.responseType = "json";
+        http.send(obj);
+        http.onload = function () {
+            var xyz = http.response;
+            console.log(xyz)
+        }
+    }
+
+
+</script>
+
+</html>

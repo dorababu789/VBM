@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>comments</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="use.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between header" style="background: linear-gradient(45deg,orange,green);">
+            <img class="img" src="vbm.jpeg" alt="image">
+            <a class="anchor" href="user.html"> Logout</a>
+        </div>
+        <div class="row bg-info d-flex justify-content-around text-center my-2 text-danger second-header">
+            <a class="color text-center" href="user.html">User</a>
+            <a class="color text-center" href="post.html">Post</a>
+            <a class="color text-center" href="comment.html">Comment</a>
+        </div>
+    </div>
+    <div id="card1">
+
+    </div>
+</body>
+<script>
+
+    var http = new XMLHttpRequest();
+    http.open("GET", "https://jsonplaceholder.typicode.com/comments");
+    http.responseType = "json";
+    http.send();
+    http.onload = function () {
+    abc = http.response;
+    var comment = "";
+    abc.forEach(function(val,ind){
+        comment=comment+ "<div class='card  text-center '><div class='card-header bg-warning'>" + val.id + "</div><div class='card-body'>" + val.name + "</div><div class='card-footer mb-4'>" + val.email + "</div></div >"
+        
+    });
+    document.getElementById("card1").innerHTML=comment;
+    }
+
+</script>
+
+</html>
