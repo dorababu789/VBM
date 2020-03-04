@@ -1,0 +1,76 @@
+.main-cont{
+    background-image: url(off2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 560px;
+}
+.side-header{
+    padding-top: 10px;
+   font-weight: 900;
+   margin-right: 130px;
+   font-style: italic;
+}
+.anc{
+    margin-left: 130px;
+    border: 1px black solid;
+    padding: 15px;
+    border-radius: 21px;
+    
+}
+.decaration{
+    color: black;
+    text-decoration: none!important;
+}.anch{
+    border: 1px black solid;
+    padding: 15px;
+    border-radius: 21px;
+    text-decoration: none!important;
+    color:white;
+    background:black; 
+}.img{
+    height: 350px;
+}
+.liner:hover{
+    background:linear-gradient(45deg, #ffa500,rgb(33, 212, 33));
+    transition: 1s;
+    transform: translateY(-30px);
+}
+.grade{
+    background-color: lightyellow;
+    box-shadow: lightslategray;
+    border-radius: 10px;
+}
+.change{
+    position: absolute;
+    top:58px;
+    color: green;
+}
+.relative{
+    position: relative;
+    left: 36px;
+}.chang{
+    position: absolute;
+    top: 105px;
+    color: green;    
+}
+.chan{
+    position: absolute;
+    top: 150px;
+    color: green;       
+}
+.icon{
+   margin-top: 580px; 
+}
+.bag{
+    background-color:lightblue;
+}
+.font{
+    font-size: 25px;
+    font-style: italic;
+    margin-top: 100px;
+    text-align: center;
+}
+.mar{
+    margin-left: 650px;
+}
+
