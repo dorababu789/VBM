@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>project</title>
+        <style>
+            
+            .container{
+                height: 60px;
+                background-color :black;
+                width: 75%;
+                
+                
+            }
+            .header{
+                display: flex;align-items: center;
+                background-color: black;
+    
+            }
+            
+            .github{
+                width: 40px;
+                height: 40px;
+                margin:10px;
+                border-radius: 40px;
+            }
+            .some{
+                color: white;
+                margin-left: 1rem;
+                font-style: italic;
+                font-weight: bold;
+                font-size: large;
+            }
+            .bell{
+                width: 30px;
+                height: 30px;
+                border-radius: 30px;
+                margin-right: 15px;
+            }
+            .container{
+                display: flex;justify-content: space-between;
+              width: 100%;
+            }
+            .right{
+                margin-right: 15px;
+            }
+            .dec{
+                text-decoration: none;
+                
+            }
+            .body{
+                border-bottom: 1px solid grey;
+                padding: 0px 0px 10px 15px;
+            }
+            .temp{
+                width: 110px;
+                height: 30px;
+                border-bottom: 1px solid grey;
+            }
+            .temp1{
+                width: 150px;
+                height: 25px;
+            }
+            .even{
+                display: flex;
+            margin-right: 20px;
+            border-bottom: 1px solid grey;
+            padding: 0px 0px 10px 15px;
+
+            
+            }
+            .even1{
+                display: flex;
+            }
+            .in{display: flex;
+                align-items: center;
+                margin-top: 20px;
+                padding-left: 15px;
+            }
+            .mar{
+                margin: 0px;
+            }
+            .top{
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .bor{
+                border-bottom: 1px solid grey;
+                padding: 0px 0px 10px 15px;
+
+    
+            }
+            button{
+                background-color:green;
+                height: 30px;
+                margin-left: 15px;
+                padding-bottom: 20px;
+            }
+            .width{
+                width: 50%;
+                border-radius: 10px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="maincontainer" >
+            <div class="container">
+            <div class="header">
+                <img class="github" src="https://e7.pngegg.com/pngimages/914/758/png-clipart-computer-icons-logo-github-github-logo-logo-computer-program-thumbnail.png" alt="">
+                <input type="text " placeholder="Search or jump to"> 
+                <span class="some">Pull requests</span>
+                <span class="some">Issues</span>
+                <span class="some">Market place</span>
+                <span class="some">Explore</span>
+            </div>
+            <div class="header right">
+                <img class="bell" src="https://img.freepik.com/free-vector/flat-design-notification_23-2147715931.jpg?size=338&ext=jpg" alt="">
+                <select class="right" name="drop" id="">
+                    <option  class="right" value="">+</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+                <img  class="bell right" src="https://i.pinimg.com/736x/3e/26/aa/3e26aab66eeb79c2e0283ea978d80f43.jpg" alt="">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center;  color: white; background-color: black;padding-bottom: 30px;" >
+
+              <div class="width">
+                <div class="body">
+                    <h3>Create a new repository</h3>
+                    <p>A  repository contains all project files, including the revision history. Already have a project repository elsewhere?</p>
+                    <a class="dec" href=""> import a repository</a>
+                </div>
+                <div class="body">
+                    <h4> Repository template</h4>
+                    <p><small> Start your repository with a template repository's contents.</small></p>
+                   <select  class="temp" name="" id="">
+                        <option value="">No templates</option>
+                        <option value="">No templates</option>
+                        <option value="">No templates</option>
+                        <option value="">No templates</option>
+                      </select>
+                </div>
+                <div class="even">
+                    <div>
+                      <h4>Owner*</h4>
+                      <select class="temp" name="" id=""> 
+                        <option value=""> pspk</option>
+                        <option value=""> pspk</option>
+                        <option value=""> pspk</option>
+                        <option value=""> pspk</option>
+                  </select>
+                  </div>
+                    <div>
+                      <h4 style="margin-left: 22px;">Repository name</h4>
+                      <input  style="margin-left: 20px;" class="temp1" type="text" >
+                    </div>
+                </div>
+                <div class="in">
+                    <input type="radio">
+                    <div class="even1">
+                        <div>
+                            <img class="bell top" src="https://lh3.googleusercontent.com/proxy/3Pk4NgSlSXOGInUpi5TH7dXpEfIpbHwkcZ2k09EbSrJ9_YbtoCvOjEHqCXgC3W0EoJittr7jQYHyW9m7qNEd79cq" alt="">
+                        </div>
+                        <div>
+                            <h4 class="mar">Public</h4>
+                            <p class="mar">Anyone on the internet can see this repository. You choose who can commit</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="in bor">
+                  <input type="radio">
+                  <div class="even1">
+                      <div>
+                          <img class="bell top" src="https://image.shutterstock.com/image-vector/lock-icon-260nw-425675884.jpg" alt="">
+                      </div>
+                      <div >
+                          <h4 class="mar">Private</h4>
+                          <p class="mar">You choose who can see and commit to this repository.</p>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <h4 style="padding-left: 15px;"  >Initialize this repository with:</h4>
+                  <p  style="padding-left: 15px;"  >Skip this step if you’re importing an existing repository.</p>
+              </div>
+              <div class="in ">
+                  <input type="checkbox">
+                  <div class="even1">
+                      <div >
+                          <h4 class="mar top">Add a README file</h4>
+                          <p class="mar top">This is where you can write a long description for your.  <a  class="dec" href=""> Learn more</a>   </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="in ">
+                  <input type="checkbox">
+                  <div class="even1">
+                      <div >
+                          <h4 class="mar top">Add .gitignore </h4>
+                          <p class="mar top">Choose which files not to track from a list of templates.<a  class="dec" href=""> Learn more</a>   </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="in ">
+                  <input type="checkbox">
+                  <div class="even1">
+                      <div >
+                          <h4 class="mar top">Choose a license </h4>
+                          <p class="mar top">A license tells others what they can and can't do with your code<a  class="dec" href=""> Learn more</a>   </p>
+                      </div>
+                  </div>
+              </div>
+
+              <p  class="bor">This will set  main as the default branch. Change the default name in your.<a  class="dec" href=""> Setting</a>   </p>
+      
+              <button> Createrepository</button>
+              </div>
+          </div>
+          </div>
+          </div>
+        </div>
+    </body>
+</html>
